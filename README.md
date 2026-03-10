@@ -50,13 +50,13 @@ Niveau 0 — Accueil (index.html)
 
 ## Fonctionnalités
 
-- 🌙 **Mode sombre / clair** — bascule dynamique via JavaScript
-- 💬 **Chatbot intégré** — assistant virtuel pour renseigner les visiteurs
-- 📬 **Formulaire de contact** — validation des champs en JavaScript
-- 🧭 **Menu de navigation interactif** — responsive, géré en JavaScript
-- 📱 **Design responsive** — adapté mobile, tablette et desktop via media queries
-- 🔒 **Page Mentions Légales** — conformité RGPD, droits des utilisateurs
-- 🗺️ **Plan du site complet** — footer structuré avec toutes les rubriques
+- **Mode sombre / clair** — bascule dynamique via JavaScript
+- **Chatbot intégré** — assistant virtuel pour renseigner les visiteurs
+- **Formulaire de contact** — validation des champs en JavaScript
+- **Menu de navigation interactif** — responsive, géré en JavaScript
+- **Design responsive** — adapté mobile, tablette et desktop via media queries
+- **Page Mentions Légales** — conformité RGPD, droits des utilisateurs
+- **Plan du site complet** — footer structuré avec toutes les rubriques
 
 ---
 
@@ -67,15 +67,9 @@ Niveau 0 — Accueil (index.html)
 - JavaScript (DOM, événements, validation, dark mode)
 - Git / GitHub (versioning collaboratif)
 
----
-
-## Lancer le projet
-
-Aucune installation requise. Ouvrir `index.html` dans un navigateur.
-
-Ou consulter directement : **[https://ayabarouni.github.io/Efrei_Vitrine/](https://ayabarouni.github.io/Efrei_Vitrine/)**
 
 ---
+
 
 ## Conformité
 
