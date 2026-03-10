@@ -1,0 +1,142 @@
+/* Styles spécifiques à la page À Propos */
+
+/* Hero pour les pages internes */
+.hero-page {
+    background-color: var(--color-eefrei-blue);
+    color: var(--color-text-light);
+    padding: var(--spacing-lg) 0;
+}
+.hero-page h1 {
+    color: var(--color-accent-turquoise);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Encadré Chiffres Clés */
+.key-figures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-lg) 0;
+}
+.figure-item {
+    text-align: center;
+    padding: var(--spacing-sm);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-sm);
+}
+.figure-item strong {
+    display: block;
+    font-size: 2.5rem;
+    font-family: var(--font-family-heading);
+    color: var(--color-eefrei-blue-dark);
+    line-height: 1.1;
+}
+.figure-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+/* Styles pour la section Histoire/Timeline */
+.history-timeline {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: var(--color-border);
+    margin-left: -2px;
+}
+.timeline-event {
+    position: relative;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    width: 50%;
+}
+.timeline-event:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+.timeline-event:nth-child(even) {
+    left: 50%;
+    margin-left: var(--spacing-lg); /* Éloigne du trait */
+}
+
+.timeline-event h3 {
+    margin-top: 0;
+    color: var(--color-accent-turquoise);
+    font-size: 1.3rem;
+}
+
+/* Cercle sur la ligne */
+.timeline-event::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-eefrei-blue);
+    border: 3px solid var(--color-background); /* Pour donner un effet de contour */
+    border-radius: 50%;
+    top: 30px;
+    z-index: 10;
+}
+.timeline-event:nth-child(odd)::after {
+    right: -10px; /* Positionnement à droite pour le bloc de gauche */
+}
+.timeline-event:nth-child(even)::after {
+    left: -10px; /* Positionnement à gauche pour le bloc de droite */
+}
+
+/* Citation de la Direction */
+.direction-quote {
+    margin: var(--spacing-xl) auto;
+    max-width: 900px;
+    padding: var(--spacing-lg);
+    background-color: var(--color-eefrei-blue-dark);
+    color: var(--color-text-light);
+    border-radius: var(--border-radius-md);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    border-left: 8px solid var(--color-accent-turquoise);
+}
+.direction-quote cite {
+    display: block;
+    margin-top: var(--spacing-sm);
+    text-align: right;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent-turquoise);
+}
+
+/* Media Query pour Mobile: Simplification de la Timeline */
+@media (max-width: 768px) {
+    .history-timeline::before {
+        left: var(--spacing-md); /* Déplace la ligne à gauche */
+    }
+    .timeline-event {
+        width: 100%;
+        padding-left: var(--spacing-lg);
+        text-align: left !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+    }
+    .timeline-event:nth-child(odd)::after {
+        right: auto;
+        left: 10px;
+    }
+    .timeline-event:nth-child(even)::after {
+        left: 10px;
+    }
+}

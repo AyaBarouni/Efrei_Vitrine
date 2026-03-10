@@ -1,0 +1,51 @@
+<!-- Chatbot EFREI -->
+<div class="chatbot">
+
+    <button class="chatbot-toggle" aria-label="Ouvrir le chatbot">
+        💬
+    </button>
+
+    <div class="chatbot-window" aria-hidden="true">
+
+        <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo_efrei_new.png" alt="Logo EFREI Paris Panthéon‑Assas Université" style="height: 48px; width: auto;" />
+                </a>
+            </div>
+
+            <nav class="main-nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="campus.html">Campus</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+        </div>
+    </header>
+
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot">
+                Bonjour 👋<br>
+                Je peux te renseigner sur l’EFREI : formations, admissions, vie étudiante, alternance, etc.
+            </div>
+        </div>
+
+        <form class="chatbot-form" id="chatbotForm">
+            <input 
+                type="text" 
+                id="chatbotInput" 
+                placeholder="Pose ta question..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit">Envoyer</button>
+        </form>
+
+    </div>
+</div>

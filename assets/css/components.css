@@ -1,0 +1,304 @@
+/* Card Component */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--color-shadow-subtle) 0 4px 12px;
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast), background-color var(--transition-default);
+    height: 100%; /* Important pour les grilles */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--color-shadow-subtle) 0 8px 20px;
+}
+
+.card-img-container {
+    height: 200px;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--color-eefrei-blue);
+}
+
+.card-actions {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    text-align: right;
+}
+
+/* Scroll Reveal (par défaut invisible) */
+.reveal-item {
+    opacity: 1;
+    transform: none;
+}
+
+.js .reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 1.2rem;
+    padding: var(--spacing-xs);
+    border-radius: 50%;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.theme-toggle:hover {
+    background-color: var(--color-eefrei-blue-dark);
+    color: var(--color-text-light);
+}
+
+/* Menu Mobile (burger) - Rendre accessible */
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+}
+
+.nav-toggle div {
+    width: 100%;
+    height: 3px;
+    background: var(--color-eefrei-blue);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+/* Styles pour l'état ouvert du burger */
+.nav-toggle[aria-expanded="true"] .line1 {
+    transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .line2 {
+    opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .line3 {
+    transform: rotate(-45deg);
+}
+
+.nav-menu.is-open {
+    /* Styles pour le menu mobile ouvert (e.g., plein écran ou slide-out) */
+    position: fixed;
+    top: 80px; /* Sous le header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--spacing-xl);
+    z-index: 90;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+.nav-menu:not(.is-open) {
+    transform: translateX(100%);
+}
+
+.nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+}
+.nav-menu a {
+    font-size: 1.5rem;
+    padding: var(--spacing-sm) 0;
+}
+
+/* ... (suite de components.css) ... */
+
+/* Lightbox Modal Styles */
+/*
+ * Lightbox modal container
+ *
+ * By default we hide the entire lightbox overlay to prevent it from
+ * appearing on initial page load. The `.open` modifier class will be
+ * applied via JavaScript when the user activates a gallery image,
+ * restoring the `flex` layout so the image and controls are visible. See
+ * the corresponding changes in the JavaScript (initLightbox) for the
+ * logic that toggles this class. Without the `.open` class, the
+ * lightbox remains hidden, avoiding the bug where the overlay was
+ * displayed prematurely.
+ */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    display: none !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When the lightbox is open, use flex to center the content */
+.lightbox-modal.open {
+    display: flex !important;
+}
+
+/*
+ * Hide elements that carry the `hidden` attribute.
+ *
+ * By default, modern browsers honour the native `hidden` attribute by setting
+ * `display: none`, but when combined with our custom components we noticed
+ * that the lightbox overlay remained visible on page load. Explicitly
+ * declaring a rule for `[hidden]` ensures that any element (including
+ * the lightbox modal) is properly hidden until JavaScript removes the
+ * attribute. This does not interfere with the accordion, which already
+ * toggles its panels via the same attribute.
+ */
+[hidden] {
+    display: none !important;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    display: block;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 210;
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 5px 15px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover {
+    background: var(--color-eefrei-blue);
+}
+
+.lightbox-prev:disabled, .lightbox-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Accordion Styles (pour la FAQ) */
+.accordion {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+}
+
+.accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    color: var(--color-eefrei-blue);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.accordion-header button:hover {
+    background-color: var(--color-background-light);
+}
+
+.accordion-header button::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+
+.accordion-header button[aria-expanded="true"]::after {
+    content: '−';
+}
+
+.accordion-content {
+    padding: var(--spacing-md);
+    padding-top: 0; /* Alignement */
+    border-top: 1px solid var(--color-border);
+}
+.accordion-content[hidden] {
+    display: none;
+}

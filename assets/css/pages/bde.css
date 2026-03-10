@@ -1,0 +1,114 @@
+/* Styles spécifiques à la page BDE et Vie Associative */
+
+/* Bannière d'Honneur pour le BDE/l'Association principale */
+.bde-hero {
+    background: linear-gradient(135deg, var(--color-eefrei-blue-dark) 0%, var(--color-eefrei-blue) 100%);
+    color: var(--color-text-light);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+.bde-hero h1 {
+    color: var(--color-accent-turquoise);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+.bde-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+/* Grille des Valeurs/Missions */
+.bde-missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+.mission-item {
+    padding: var(--spacing-md);
+    background-color: var(--color-background-light);
+    border-left: 5px solid var(--color-accent-turquoise);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-small);
+}
+.mission-item h3 {
+    color: var(--color-eefrei-blue-dark);
+}
+
+/* Section Présentation des Associations (Gallerie) */
+.associations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+/* Carte d'Association */
+.asso-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.asso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.asso-card-img {
+    height: 200px;
+    background-color: #d8e6f1; /* Placeholder */
+    overflow: hidden;
+}
+.asso-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.asso-card-content {
+    padding: var(--spacing-md);
+}
+
+.asso-card h3 {
+    color: var(--color-eefrei-blue-dark);
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Catégorie / Thème de l'association */
+.asso-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-light);
+}
+
+/* Styles par type d'association */
+.tag-sport { background-color: #f44336; } /* Rouge */
+.tag-tech { background-color: #4CAF50; } /* Vert */
+.tag-culture { background-color: #9C27B0; } /* Violet */
+.tag-humanitaire { background-color: #2196F3; } /* Bleu clair */
+.tag-event { background-color: #FF9800; } /* Orange */
+
+
+/* Bloc CTA spécifique (Contact BDE) */
+.bde-contact-cta {
+    background-color: var(--color-eefrei-blue);
+    color: var(--color-text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+.bde-contact-cta h2 {
+    color: var(--color-accent-turquoise);
+    margin-top: 0;
+}

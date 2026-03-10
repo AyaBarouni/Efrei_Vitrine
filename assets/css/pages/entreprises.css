@@ -1,0 +1,125 @@
+/* Styles spécifiques à la page Relations Entreprises et Partenariats */
+
+/* Section Logos Partenaires */
+.partners-section {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.partners-section h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+}
+
+.logo-item {
+    width: 150px;
+    height: 80px;
+    padding: 10px;
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast);
+}
+
+.logo-item:hover {
+    transform: scale(1.05);
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Rendre les logos sombres plus visibles en mode sombre si nécessaire */
+    filter: grayscale(100%); 
+    opacity: 0.7;
+}
+
+/* Offres et Recrutement */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.offer-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-accent-turquoise);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-small);
+}
+
+.offer-card h3 {
+    color: var(--color-eefrei-blue-dark);
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.offer-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px dotted var(--color-border);
+}
+
+/* Événements Partenaires (Forum, Conférences) */
+.event-pro-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.event-pro-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-fast);
+}
+.event-pro-item:hover {
+    background-color: var(--color-background-light);
+}
+
+.event-pro-date {
+    flex: 0 0 100px; /* Largeur fixe pour la date */
+    text-align: center;
+    background-color: var(--color-eefrei-blue);
+    color: var(--color-text-light);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-sm);
+}
+
+.event-pro-date strong {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.event-pro-content {
+    flex: 1;
+}
+.event-pro-content h3 {
+    margin-top: 0;
+    color: var(--color-eefrei-blue-dark);
+}

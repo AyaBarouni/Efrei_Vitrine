@@ -1,0 +1,126 @@
+/* Styles spécifiques à la page Campus */
+
+/* Bannière Campus et Vidéo */
+.campus-hero {
+    background-color: var(--color-eefrei-blue-dark);
+    color: var(--color-text-light);
+    padding: var(--spacing-xl) 0;
+}
+.campus-hero h1 {
+    color: var(--color-accent-turquoise);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.video-responsive {
+    position: relative;
+    width: 100%;
+    /* Ratio 16:9 */
+    padding-bottom: 56.25%; 
+    height: 0;
+    margin-top: var(--spacing-lg);
+    background-color: #000;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Sections Pôles d'Innovation et Laboratoires */
+.poles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.pole-item {
+    padding: var(--spacing-md);
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-small);
+    border-top: 5px solid var(--color-eefrei-blue);
+    transition: transform var(--transition-fast);
+}
+.pole-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.pole-item h3 {
+    color: var(--color-eefrei-blue-dark);
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+.pole-item ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+}
+.pole-item ul li::before {
+    content: '▶';
+    color: var(--color-accent-turquoise);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Galerie Photo (utilise la Lightbox JS) */
+.lightbox-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.gallery-item a {
+    display: block;
+    overflow: hidden;
+    height: 250px;
+    background-color: #f0f0f0;
+    border-radius: var(--border-radius-sm);
+    transition: opacity var(--transition-fast);
+}
+.gallery-item a:hover {
+    opacity: 0.85;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Plan d'accès */
+.plan-acces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+.plan-acces > * {
+    flex: 1 1 45%; /* 45% pour laisser de l'espace entre les blocs */
+    min-width: 300px;
+}
+
+.map-embed {
+    height: 400px;
+    background-color: #ddd;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

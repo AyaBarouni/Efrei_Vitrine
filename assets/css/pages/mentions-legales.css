@@ -1,0 +1,109 @@
+/*
+ * ====================================================================
+ * Fichier : mentions-legales.css
+ * Description : Styles spécifiques pour la page Mentions Légales.
+ * Note : Ce fichier est supposé être chargé APRÈS les fichiers base.css, layout.css et components.css.
+ * ====================================================================
+ */
+
+/* --- Mise en page des sections d'informations --- */
+
+.institutionnel-details, .hebergement, .propriete, .rgpd {
+    /* Assurer un bon espacement standard pour les sections */
+    padding: var(--space-l) 0;
+}
+
+.institutionnel-details .contact-box, .hebergement .contact-box {
+    /* Utilisation de la classe contact-box pour encadrer les informations légales */
+    padding: var(--space-m);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-small);
+}
+
+.institutionnel-details .contact-box h3, .hebergement .contact-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    font-size: 1.4rem;
+    border-bottom: 2px dotted var(--color-primary);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-s);
+}
+
+/* Styles pour les listes de définitions (dl) utilisées pour les détails légaux */
+.contact-box dl {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Alignement propre des termes et définitions */
+    gap: var(--space-xs) var(--space-m);
+    margin: var(--space-s) 0;
+}
+
+.contact-box dt {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.contact-box dd {
+    margin-left: 0;
+}
+
+
+/* --- Section Propriété Intellectuelle --- */
+
+.propriete h3 {
+    color: var(--color-primary);
+    margin-top: var(--space-m);
+}
+
+/* --- Section RGPD/Données Personnelles --- */
+
+.rgpd {
+    background-color: var(--color-secondary);
+}
+
+.rgpd .cta-link {
+    margin-top: var(--space-l);
+    font-weight: var(--font-weight-semi-bold);
+}
+.rgpd .cta-link a {
+    color: var(--color-primary);
+}
+
+
+/* --- Media Queries --- */
+
+@media (max-width: 768px) {
+    .contact-box dl {
+        grid-template-columns: 100px 1fr; /* Réduction de la largeur pour les termes */
+        font-size: 0.95rem;
+    }
+}
+
+/* --- Section Équipe de réalisation --- */
+.equipe-projet .team-grid {
+    margin-top: var(--space-m);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-m);
+    justify-items: center;
+}
+
+.equipe-projet .team-grid figure {
+    text-align: center;
+}
+
+.equipe-projet .team-grid img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.equipe-projet .team-grid figcaption {
+    margin-top: var(--space-xs);
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--color-text-dark);
+}

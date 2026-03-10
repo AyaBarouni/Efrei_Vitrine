@@ -1,0 +1,58 @@
+/* Palette EFREI moderne */
+:root {
+    /* Couleurs principales */
+    --color-eefrei-blue: #004c99; /* Bleu EFREI profond */
+    --color-eefrei-blue-dark: #003366; /* Bleu très foncé pour hover/accents */
+    --color-accent-turquoise: #00bcd4; /* Turquoise vif pour l'accentuation */
+    --color-background-light: #f4f7f6; /* Blanc cassé / Gris très doux */
+    --color-text-dark: #333333; /* Texte principal */
+    --color-text-light: #ffffff; /* Texte sur fond sombre */
+    --color-shadow-subtle: rgba(0, 0, 0, 0.08); /* Ombre douce */
+
+    /* Mode Sombre (par défaut si pas de préférence) */
+    --color-background: #1e1e1e;
+    --color-surface: #2d2d2d;
+    --color-text: var(--color-text-light);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-link: var(--color-accent-turquoise);
+    --color-link-hover: #4dd0e1;
+    --color-button-primary: var(--color-eefrei-blue);
+    --color-button-text: var(--color-text-light);
+
+    /* Espacements */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+    --spacing-xl: 80px;
+    --spacing-xxl: 120px;
+
+    /* Typographie */
+    --font-family-body: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-heading: 'Poppins', var(--font-family-body);
+    --font-size-base: 1.125rem; /* 18px */
+    --line-height-base: 1.7;
+
+    /* Rayons */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease-out;
+    --transition-default: 0.3s ease-in-out;
+}
+
+/* Mode Clair (appliqué par JS ou media query) */
+.theme-light {
+    --color-background: var(--color-background-light);
+    --color-surface: var(--color-text-light);
+    --color-text: var(--color-text-dark);
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-link: var(--color-eefrei-blue);
+    --color-link-hover: var(--color-eefrei-blue-dark);
+}
+
+/* Fallback pour la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* Note: En production, les polices seraient téléchargées localement pour des raisons de performance/RGPD. */
